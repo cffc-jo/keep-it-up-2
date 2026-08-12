@@ -492,8 +492,16 @@
     handleTap();
   }
 
+  // Note: we intentionally do NOT also listen for "touchstart" here.
+  // Touch devices fire both "pointerdown" and "touchstart" for the same
+  // tap; an unguarded touchstart preventDefault() would suppress the
+  // browser's synthesized "click" on buttons even when onPointerDown
+  // above correctly backs off for .btn targets — causing "Tap to Start"
+  // / "Try Again" to intermittently do nothing (worse with multi-touch,
+  // e.g. several people tapping the same screen at once). CSS already
+  // handles scroll/zoom/callout suppression (touch-action, user-select),
+  // so pointerdown's own preventDefault() below is sufficient.
   stage.addEventListener("pointerdown", onPointerDown, { passive: false });
-  stage.addEventListener("touchstart", function (e) { e.preventDefault(); }, { passive: false });
 
   startBtn.addEventListener("click", function (e) { e.preventDefault(); startGame(); });
   retryBtn.addEventListener("click", function (e) { e.preventDefault(); startGame(); });
