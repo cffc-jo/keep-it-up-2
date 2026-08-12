@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="theme-color" content="#171A45" />
+<title>Chicago Fire FC — Keep It Up Challenge</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Landscape lock overlay -->
+  <div id="rotate-overlay" class="rotate-overlay" aria-hidden="true">
+    <div class="rotate-icon">&#128241;</div>
+    <p>Please rotate your device<br/>to <strong>portrait</strong> mode</p>
+  </div>
+
+  <div id="app" class="app">
+
+    <!-- HUD -->
+    <header class="hud">
+      <div class="crest" aria-hidden="true">
+        <svg viewBox="0 0 100 100" class="crest-svg">
+          <polygon points="50,4 90,26 90,74 50,96 10,74 10,26" fill="#171A45" stroke="#7DCCF0" stroke-width="2"/>
+          <path d="M50 20 C40 34 34 42 34 54 C34 66 42 74 50 74 C58 74 66 66 66 54 C66 46 62 40 58 34 C60 44 56 50 50 50 C44 50 42 44 46 36 C42 40 38 46 38 54 C38 62 43 68 50 68 C57 68 62 62 62 54 C62 44 56 30 50 20 Z" fill="#FF0000"/>
+        </svg>
+      </div>
+      <div class="hud-title">
+        <span class="hud-club">CHICAGO FIRE FC</span>
+        <span class="hud-game">KEEP&nbsp;IT&nbsp;UP&nbsp;CHALLENGE</span>
+      </div>
+      <div class="hud-stats">
+        <div class="stat">
+          <span class="stat-label">Streak</span>
+          <span id="streak-value" class="stat-value">0<span class="stat-target">/10</span></span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Time</span>
+          <span id="timer-value" class="stat-value">45.0</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Game surface -->
+    <main class="stage">
+      <canvas id="game-canvas"></canvas>
+
+      <!-- Start screen -->
+      <div id="start-screen" class="overlay-screen">
+        <h1 class="overlay-title">KEEP&nbsp;IT&nbsp;UP!</h1>
+        <p class="overlay-copy">Tap the screen to knock the ball back up.<br/>Reach a streak of <strong>10</strong> before the clock runs out!</p>
+        <button id="start-btn" class="btn btn-primary">TAP TO START</button>
+      </div>
+
+      <!-- Win screen -->
+      <div id="win-screen" class="overlay-screen hidden">
+        <h1 class="overlay-title win-title">YOU WON!</h1>
+        <p class="overlay-copy">You kept it up like a pro.</p>
+        <a id="prize-btn" class="btn btn-prize" href="http://www.chicagofirefc.com/app/keepup-prize/" target="_blank" rel="noopener noreferrer">YOUR PRIZE</a>
+      </div>
+
+      <!-- Lose screen -->
+      <div id="lose-screen" class="overlay-screen hidden">
+        <h1 class="overlay-title lose-title">SO CLOSE!</h1>
+        <p class="overlay-copy">Make it to 10 to win.</p>
+        <button id="retry-btn" class="btn btn-primary">TRY AGAIN</button>
+      </div>
+
+      <canvas id="confetti-canvas"></canvas>
+    </main>
+
+    <footer class="footer">
+      <span>&copy; Chicago Fire FC</span>
+    </footer>
+  </div>
+
+  <script src="js/game.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+# Local dev/preview tooling — not part of the shipped game
+.claude/
+
+# OS/editor cruft
+.DS_Store
+Thumbs.db
