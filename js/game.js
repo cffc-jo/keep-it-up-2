@@ -42,6 +42,7 @@
   var startBtn = document.getElementById("start-btn");
   var retryBtn = document.getElementById("retry-btn");
   var prizeBtn = document.getElementById("prize-btn");
+  var playAgainBtn = document.getElementById("play-again-btn");
 
   // ---------------------------------------------------------------------
   // State
@@ -505,6 +506,7 @@
 
   startBtn.addEventListener("click", function (e) { e.preventDefault(); startGame(); });
   retryBtn.addEventListener("click", function (e) { e.preventDefault(); startGame(); });
+  playAgainBtn.addEventListener("click", function (e) { e.preventDefault(); startGame(); });
   prizeBtn.addEventListener("click", function () {
     // Hook for native app integration: if the surrounding WebView wants
     // to intercept the prize click (e.g. to open its own in-app browser

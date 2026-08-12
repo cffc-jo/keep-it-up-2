@@ -167,7 +167,8 @@ body{
   color: var(--text-light);
   text-shadow: 0 3px 0 var(--fire-red-dk), 0 0 24px rgba(255,0,0,0.5);
 }
-.win-title{ color: #FFD84D; text-shadow: 0 3px 0 var(--fire-red-dk), 0 0 30px rgba(255,216,77,0.6); }
+.win-title{ color: #FFFFFF; text-shadow: 0 3px 0 var(--fire-red-dk), 0 0 30px rgba(255,0,0,0.55); }
+#win-screen .overlay-copy{ color: #FFFFFF; }
 .lose-title{ color: var(--fire-sky); text-shadow: 0 3px 0 var(--fire-navy), 0 0 24px rgba(125,204,240,0.45); }
 
 .overlay-copy{
@@ -203,15 +204,18 @@ body{
   box-shadow: 0 6px 0 var(--fire-red-dk), 0 10px 20px rgba(255,0,0,0.35);
 }
 .btn-prize{
-  background: linear-gradient(180deg, #FFD84D 0%, #F0A500 100%);
-  color: var(--fire-black);
-  box-shadow: 0 6px 0 #B37A00, 0 10px 24px rgba(255,216,77,0.45);
+  background: linear-gradient(180deg, #7DCCF0 0%, #4FA8D8 100%);
+  color: var(--fire-navy);
+  box-shadow: 0 6px 0 #3A85AD, 0 10px 24px rgba(125,204,240,0.45);
   animation: pulse-prize 1.4s ease-in-out infinite;
 }
 @keyframes pulse-prize{
   0%, 100%{ transform: scale(1); }
   50%{ transform: scale(1.045); }
 }
+
+/* Stack multiple CTAs on one overlay screen with breathing room between them */
+.overlay-screen .btn + .btn{ margin-top: 14px; }
 
 .footer{
   flex: 0 0 auto;
